@@ -29,7 +29,13 @@
 
 - (UITableView *)feedTableView {
     if (!_feedTableView) {
-        _feedTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+        CGFloat padding = 0;
+        if ([UIDevice currentDevice].systemVersion.integerValue >= 7.0) {
+            padding = 64;
+        } else {
+            padding = 44;
+        }
+        _feedTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) - padding) style:UITableViewStylePlain];
         _feedTableView.delegate = self;
         _feedTableView.dataSource = self;
         _feedTableView.backgroundColor = [UIColor whiteColor];

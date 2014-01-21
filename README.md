@@ -16,7 +16,7 @@ XHFeed
 
 ![image](https://github.com/JackTeam/XHFeed/raw/master/Screenshots/XHFeedController4.png)
 
-
+静态栏有bug
 
 ## License
 
